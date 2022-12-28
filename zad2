@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double pari2 = double.Parse(Console.ReadLine());
+            int dni1 = int.Parse(Console.ReadLine());
+            int dni2 = 7 - dni1;
+            int bonusi = 0;
+            var dni = new List<string>();
+            double zaplata2 = Math.Round(dni2 * pari2,2);
+            double zaplata1 = Math.Round(dni1 * 60.00,2);
+
+            
+
+            for (int i = 0; i < dni1; i++)
+            {
+                string den = Console.ReadLine();
+                dni.Add(den);
+            }
+
+            foreach (var item in dni)
+            {
+                if (item == "Friday" || item == "Saturday")
+                {
+                    bonusi += 9;
+                }
+            }
+
+            Console.WriteLine(Math.Round(zaplata1 + zaplata2 + bonusi,2));
+           
+        }
+    }
+}

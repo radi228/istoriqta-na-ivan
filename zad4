@@ -8,21 +8,21 @@ namespace arrays
         static void Main(string[] args)
         {
             int budget = int.Parse(Console.ReadLine());
-            double havliq = double.Parse(Console.ReadLine());
+            decimal havliq = decimal.Parse(Console.ReadLine());
             int discount = int.Parse(Console.ReadLine());
-            double chadur = (havliq / 3) * 2;
-            double japanki = (chadur * 75) / 100;          
-            double plajnaChanta = (japanki + havliq) / 3;
-            double sum = havliq + chadur + japanki + plajnaChanta;
-            double newsum = (sum * discount) / 100;
+            decimal chadur = (havliq / 3) * 2;
+            decimal japanki = (chadur * 75) / 100;
+            decimal plajnaChanta = (japanki + havliq) / 3;
+            decimal sum = havliq + chadur + japanki + plajnaChanta;
+            decimal newsum = sum - (sum * discount) / 100;
 
             if (newsum >  budget)
             {
-                Console.WriteLine($"Total sum is {newsum}lv. he needs {Math.Round(newsum - budget,2)}lv. more."); 
+                Console.WriteLine($"Total sum is {Math.Round(newsum,2)} lv. he needs {Math.Round(newsum - budget,2)} lv. more."); 
             }
             else
             {
-                Console.WriteLine($"Total sum is {Math.Round(budget - newsum, 2)}lv. He has {newsum}lv. left.");
+                Console.WriteLine($"Total sum is {Math.Round(newsum,2)} lv. He has {Math.Round(budget - newsum, 2)} lv. left.");
             }
         }
     }

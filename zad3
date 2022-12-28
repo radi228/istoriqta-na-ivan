@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string day = Console.ReadLine();
+            int hour = int.Parse(Console.ReadLine());
+            int busyDays = int.Parse(Console.ReadLine());
+            string[] arr = new string[busyDays];
+            
+            if (busyDays < 3 || busyDays > 7)
+            {
+                Console.WriteLine($"{busyDays} is invalid number.");
+                
+            }
+            else
+            {
+                for (int i = 0; i < busyDays; i++)
+                {
+                    string den = Console.ReadLine();
+                    arr[i] = den;
+
+                }
+                if (hour >= 10 && hour <= 22)
+                {
+                    if (!arr.Contains(day))
+                    {
+                        Console.WriteLine($"Ivan is free on {day} at {hour}.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Ivan isn't free on {day} at {hour}.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"You cannot disturb Ivan on {day} at {hour}.");
+                }
+            }
+            
+        }
+    }
+}

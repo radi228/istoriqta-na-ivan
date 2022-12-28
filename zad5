@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string destination = Console.ReadLine();
+            string type = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+            double pricePerNight = 0;
+            
+
+            if (destination == "Paris")
+            {
+                if (type == "standard room")
+                {
+                    pricePerNight = 27.50;
+                }
+                else if (type == "room with balcony")
+                {
+                    pricePerNight = 30.20;
+                }
+                else if (type == "apartament")
+                {
+                    pricePerNight = 40.50;
+                }
+            }
+            else if (destination == "London")
+            {
+                if (type == "standard room")
+                {
+                    pricePerNight = 22.99;
+                }
+                else if (type == "room with balcony")
+                {
+                    pricePerNight = 25.00;
+                }
+                else if (type == "apartament")
+                {
+                    pricePerNight = 34.99;
+                }
+            }
+            else if (destination == "Prague")
+            {
+                if (type == "standard room")
+                {
+                    pricePerNight = 23.00;
+                }
+                else if (type == "room with balcony")
+                {
+                    pricePerNight = 26.60;
+                }
+                else if (type == "apartament")
+                {
+                    pricePerNight = 39.80;
+                }
+            }
+            double sum = nights * pricePerNight * 4;
+            double discount = 0;
+
+            if (nights > 7)
+            {
+                 discount = (sum * 25) / 100;
+            }
+
+            Console.WriteLine($"Family's holiday in {destination} costs {Math.Round (sum - discount,2)} lv.");
+        }
+    }
+}
+

@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int purvaRabota = int.Parse(Console.ReadLine());
+            int vtoraRabota = 7 - purvaRabota;
+            
+            if (purvaRabota < 3 || purvaRabota > 7)
+            {
+                Console.WriteLine($"{purvaRabota} is invalid number.");
+            }
+            else
+            {
+                int chasove1 = 8 * purvaRabota;
+                int chasove2 = 5 * vtoraRabota;
+               int sum = chasove1 + chasove2;
+                Console.WriteLine(sum);
+            }
+            
+        }
+    }
+}

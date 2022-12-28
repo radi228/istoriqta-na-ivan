@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int budget = int.Parse(Console.ReadLine());
+            double havliq = double.Parse(Console.ReadLine());
+            int discount = int.Parse(Console.ReadLine());
+            double chadur = (havliq / 3) * 2;
+            double japanki = (chadur * 75) / 100;          
+            double plajnaChanta = (japanki + havliq) / 3;
+            double sum = havliq + chadur + japanki + plajnaChanta;
+            double newsum = (sum * discount) / 100;
+
+            if (newsum >  budget)
+            {
+                Console.WriteLine($"Total sum is {newsum}lv. he needs {Math.Round(newsum - budget,2)}lv. more."); 
+            }
+            else
+            {
+                Console.WriteLine($"Total sum is {Math.Round(budget - newsum, 2)}lv. He has {newsum}lv. left.");
+            }
+        }
+    }
+}
+
